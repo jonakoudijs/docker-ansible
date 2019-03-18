@@ -1,4 +1,5 @@
-![docker build status](https://img.shields.io/docker/build/jonakoudijs/ansible.svg)
+[![Test Status](https://img.shields.io/circleci/project/github/jonakoudijs/docker-ansible.svg?label=test)](https://circleci.com/gh/jonakoudijs/docker-ansible)
+[![Build Status](https://img.shields.io/docker/build/jonakoudijs/ansible.svg)](https://hub.docker.com/r/jonakoudijs/ansible)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 # Ansible Docker Image
