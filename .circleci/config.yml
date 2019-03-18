@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Download Hadolint
           command: |
-            url -sL -o ${HOME}/hadolint "https://github.com/hadolint/hadolint/releases/download/${HADOLINT_VER}/hadolint-$(uname -s)-$(uname -m)" && \
+            curl -sL -o ${HOME}/hadolint "https://github.com/hadolint/hadolint/releases/download/${HADOLINT_VER}/hadolint-$(uname -s)-$(uname -m)" && \
             chmod 700 ${HOME}/hadolint
       - run:
           name: Run Hadolint on Dockerfiles
