@@ -1,5 +1,5 @@
 # Set the base image to Alpine
-FROM alpine:3.8
+FROM alpine:3.9
 
 # File Author / Maintainer
 LABEL maintainer="Jona Koudijs"

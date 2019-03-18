@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: alpine:3.9
+    environment:
+      HADOLINT_VER: "v1.16.0"
+
+    steps:
+      - checkout
+      - run:
+          name: Install Prerequisites
+          command: |
+            apk update && apk upgrade && \
+            apk add --no-cache bash git openssh
+      - run:
+          name: Download Hadolint
+          command: |
+            url -sL -o ${HOME}/hadolint "https://github.com/hadolint/hadolint/releases/download/${HADOLINT_VER}/hadolint-$(uname -s)-$(uname -m)" && \
+            chmod 700 ${HOME}/hadolint
+      - run:
+          name: Run Hadolint on Dockerfiles
+          command: git ls-files --exclude='Dockerfile*' --ignored | xargs --max-lines=1 ${HOME}/hadolint
