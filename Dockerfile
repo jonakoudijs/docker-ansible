@@ -18,7 +18,7 @@ RUN apk update && \
 RUN pip3 install --upgrade pip
 
 # Install Ansible and modules
-RUN pip3 install ansible ansible-lint netaddr
+RUN pip3 install ansible ansible-lint yamllint netaddr
 
 # Copy configuration files
 COPY config/ansible.cfg $HOME/.ansible.cfg
