@@ -10,17 +10,17 @@ Ansible on Alpine for running and testing Ansible playbooks
 
 #### Test interactively
 ```
-docker run -i -t jonakoudijs/ansible
+docker run -it jonakoudijs/ansible /bin/sh
 ```
 #### Run ad-hoc command
 ```
-docker run -d jonakoudijs/ansible ansible-playbook /data/test.yml -i /data/inventory.ini
+docker run -it -v "$(pwd)"/playbooks:/data jonakoudijs/ansible ansible-playbook /data/test.yml -i /data/inventory.ini
 ```
 #### Run playbook
 ```
-docker run -d -v playbooks:/data jonakoudijs/ansible ansible-playbook /data/test.yml -i /data/inventory.ini
+docker run -it -v "$(pwd)"/playbooks:/data jonakoudijs/ansible ansible-playbook /data/test.yml -i /data/inventory.ini
 ```
 #### Ansible lint
 ```
-docker run -d -v playbooks:/data jonakoudijs/ansible ansible-lint /data/test.yml
+docker run -it -v "$(pwd)"/playbooks:/data jonakoudijs/ansible ansible-lint /data/test.yml
 ```
