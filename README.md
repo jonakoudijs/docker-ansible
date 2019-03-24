@@ -27,4 +27,4 @@ docker run -it -v "$(pwd)"/playbooks:/data jonakoudijs/ansible ansible-lint /dat
 
 ## License
 
-[MIT license](LICENSE)
+[MIT license](LICENSE.md)
