@@ -24,3 +24,7 @@ docker run -it -v "$(pwd)"/playbooks:/data jonakoudijs/ansible ansible-playbook 
 ```
 docker run -it -v "$(pwd)"/playbooks:/data jonakoudijs/ansible ansible-lint /data/test.yml
 ```
+
+## License
+
+[MIT license](LICENSE)
