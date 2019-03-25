@@ -19,6 +19,7 @@ RUN apk update && \
     pip3 install --no-cache-dir ansible ansible-lint yamllint netaddr && \
     # Remove unnecessary packages
     apk del gcc python3-dev libffi-dev musl-dev openssl-dev make sshpass && \
+    rm -rf /var/cache/apk/* && \
     pip3 uninstall pip -y
 
 # Copy configuration files
