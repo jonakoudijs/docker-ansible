@@ -2,22 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      - image: alpine:3.9
-    environment:
-      HADOLINT_VER: "v1.16.0"
+      - image: jonakoudijs/hadolint:latest
 
     steps:
       - checkout
       - run:
-          name: Install Prerequisites
-          command: |
-            apk update && apk upgrade && \
-            apk add --no-cache curl git
-      - run:
-          name: Download Hadolint
-          command: |
-            curl -sL -o ${HOME}/hadolint "https://github.com/hadolint/hadolint/releases/download/${HADOLINT_VER}/hadolint-$(uname -s)-$(uname -m)" && \
-            chmod 700 ${HOME}/hadolint
-      - run:
           name: Run Hadolint Test
-          command: git ls-files --exclude='Dockerfile*' --ignored | xargs ${HOME}/hadolint
+          command: git ls-files --exclude='Dockerfile*' --ignored | xargs hadolint
