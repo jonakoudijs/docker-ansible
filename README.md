@@ -9,6 +9,10 @@ Ansible on Alpine for running and testing Ansible playbooks
 
 ## Usage
 
+#### Pull latest image
+```
+docker pull jonakoudijs/ansible
+```
 #### Test interactively
 ```
 docker run -it jonakoudijs/ansible /bin/sh
