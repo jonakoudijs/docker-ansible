@@ -16,8 +16,7 @@ RUN apk update \
  && pip3 install --no-cache-dir --upgrade pip \
  && pip3 install --no-cache-dir ansible ansible-lint yamllint netaddr \
  && apk del gcc python3-dev libffi-dev musl-dev openssl-dev make sshpass \
- && rm -rf /var/cache/apk/* \
- && pip3 uninstall pip -y
+ && rm -rf /var/cache/apk/*
 
 # Copy configuration files
 COPY config/ansible.cfg $HOME/.ansible.cfg
